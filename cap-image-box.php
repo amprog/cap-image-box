@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WordPress Image Box
+Plugin Name: CAP Image Box
 Plugin URI: https://github.com/amprog/cap-image-box
 Description: Rewrites the WP image box and caption box, also provides misc image utilities.
 Version: 1.0
