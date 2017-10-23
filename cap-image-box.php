@@ -3,7 +3,7 @@
 Plugin Name: CAP Image Box
 Plugin URI: https://github.com/amprog/cap-image-box
 Description: Rewrites the WP image box and caption box, also provides misc image utilities.
-Version: 1.0
+Version: 1.0.1
 Author: Seth Rubenstein for Center for American Progress
 Author URI: https://github.com/amprog
 */
