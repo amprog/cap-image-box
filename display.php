@@ -11,7 +11,7 @@ function wpib_image_box_js() {
 	jQuery(document).ready(function($){
 	    $('img.wp-photo').each(function() {
 			if ($(this).data('credit') != undefined) {
-                if ($(this).attr("alt") == undefined) {
+                if ($(this).attr("alt") == undefined || $(this).attr("alt").length == 0) {
                     $(this).attr("alt") = $(this).data('credit');
                 }
 				credit = '<span class="photo-credit">'+$(this).data('credit')+'</span>';
