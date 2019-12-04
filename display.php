@@ -25,10 +25,22 @@ function wpib_image_box_js() {
 			}
 			alignment = $(this).data('alignment');
 			width = $(this).attr('width');
+            
+            var caption_class = '';   
+            var style = '';         
+            if($(this).hasClass('caption-right')) {
+                caption_class = 'caption-right';
+            } else if ($(this).hasClass('caption-left')) {
+                caption_class = 'caption-left';
+            }
 
 			$(this).wrap('<figure class="image-box '+alignment+'"/>');
 			if ( $(this).data('credit') != undefined || $(this).data('caption') != undefined ) {
-				$(this).after('<div class="image-meta" style="max-width:'+width+'px;">'+credit+caption+'</div>');
+                if(caption_class == '') {
+                    style = 'style="max-width: ' + width + 'px;"';
+                }               
+				$(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + credit + caption + '</div>');
+                $(this).css('display', 'inline-block');
 			}
 	    });
 	});
