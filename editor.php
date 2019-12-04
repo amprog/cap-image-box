@@ -67,9 +67,8 @@ function wpib_image_data_attr( $html ) {
     $classes[] = $alignment;
     
     // Try to get the custom ACF field on Attachments that tells us where the capiton will display
-    if(function_exists("get_field")):
-        $caption_position = get_field("caption_position", $attachment_id);
-        $classes[] = "caption-" . $caption_position;
+    if(function_exists("get_field") && !empty(get_field("caption_position", $attachment_id))):        
+        $classes[] = "caption-" . get_field("caption_position", $attachment_id);
     endif;
     
     $classes = implode(" ", $classes);

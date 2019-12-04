@@ -38,9 +38,10 @@ function wpib_image_box_js() {
 			if ( $(this).data('credit') != undefined || $(this).data('caption') != undefined ) {
                 if(caption_class == '') {
                     style = 'style="max-width: ' + width + 'px;"';
+                    $(this).css('display', 'inline-block');
+                    $(this).css('float', 'none');
                 }               
 				$(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + credit + caption + '</div>');
-                $(this).css('display', 'inline-block');
 			}
 	    });
 	});
