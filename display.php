@@ -26,17 +26,19 @@ function wpib_image_box_js() {
 			alignment = $(this).data('alignment');
 			width = $(this).attr('width');
             
-            var caption_class = '';   
-            var style = '';         
+            var caption_class = '';
+            var style = '';
             if($(this).hasClass('caption-right')) {
                 caption_class = 'caption-right';
             } else if ($(this).hasClass('caption-left')) {
                 caption_class = 'caption-left';
+            } else {
+                caption_class = 'caption-bottom';
             }
 
 			$(this).wrap('<figure class="image-box '+alignment+'"/>');
 			if ( $(this).data('credit') != undefined || $(this).data('caption') != undefined ) {
-                if(caption_class) {                    
+                if(caption_class != 'caption-bottom') {                    
                     $(this).css('display', 'inline-block');
                     $(this).css('float', 'none');
                 } else {
