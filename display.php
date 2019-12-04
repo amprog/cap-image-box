@@ -36,11 +36,12 @@ function wpib_image_box_js() {
 
 			$(this).wrap('<figure class="image-box '+alignment+'"/>');
 			if ( $(this).data('credit') != undefined || $(this).data('caption') != undefined ) {
-                if(caption_class == '') {
-                    style = 'style="max-width: ' + width + 'px;"';
+                if(caption_class) {                    
                     $(this).css('display', 'inline-block');
                     $(this).css('float', 'none');
-                }               
+                } else {
+                    style = 'style="max-width: ' + width + 'px;"';
+                }
 				$(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + credit + caption + '</div>');
 			}
 	    });
