@@ -66,6 +66,12 @@ function wpib_image_data_attr( $html ) {
     }
     $classes[] = $alignment;
     $classes = implode(" ", $classes);
+    
+    // Try to get the custom ACF field on Attachments that tells us where the capiton will display
+    if(function_exists("get_field")):
+        $caption_position = get_field("caption_position", $attachment_id);
+        $classes[] = "caption-" . $caption_position;
+    endif;
 
     $html ='<img class="wp-photo '.esc_attr($classes).' wp-image-'.$attachment_id.'" src="'.$src.'" width="'.$width.'" height="'.$height.'" '.$data_attr_credit.' data-attachid="'.esc_attr($attachment_id).'" data-alignment="'.esc_attr($alignment).'" alt="'.esc_attr($caption).'"/>';
 	return $html;
