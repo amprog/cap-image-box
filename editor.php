@@ -71,6 +71,10 @@ function wpib_image_data_attr( $html ) {
         $classes[] = "caption-" . get_field("caption_position", $attachment_id);
     endif;
     
+    if(function_exists("get_field") && !empty(get_field("pop_out", $attachment_id))):        
+        $classes[] = "pop-out";
+    endif;
+    
     $classes = implode(" ", $classes);
 
     $html ='<img class="wp-photo '.esc_attr($classes).' wp-image-'.$attachment_id.'" src="'.$src.'" width="'.$width.'" height="'.$height.'" '.$data_attr_credit.' data-attachid="'.esc_attr($attachment_id).'" data-alignment="'.esc_attr($alignment).'" alt="'.esc_attr($caption).'"/>';

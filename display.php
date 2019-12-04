@@ -27,6 +27,7 @@ function wpib_image_box_js() {
 			width = $(this).attr('width');
             
             var caption_class = '';
+            var pop_out = '';
             var style = '';
             if($(this).hasClass('caption-right')) {
                 caption_class = 'caption-right';
@@ -34,6 +35,12 @@ function wpib_image_box_js() {
                 caption_class = 'caption-left';
             } else {
                 caption_class = 'caption-bottom';
+            }
+            
+            if($(this).hasClass('pop-out') && 'alignleft' == alignment) {
+                pop_out = 'pop-out-left';
+            } else if ($(this).hasClass('pop-out') && 'alignright' == alignment) {
+                pop_out = 'pop-out-right';
             }
 
 			$(this).wrap('<figure class="image-box '+alignment+'"/>');
@@ -44,7 +51,7 @@ function wpib_image_box_js() {
                 } else {
                     style = 'style="max-width: ' + width + 'px;"';
                 }
-				$(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + credit + caption + '</div>');
+				$(this).after('<div class="image-meta ' + caption_class + ' ' + pop_out + '" ' + style + '>' + credit + caption + '</div>');
 			}
 	    });
 	});
