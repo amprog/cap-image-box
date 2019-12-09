@@ -43,7 +43,7 @@ function wpib_image_box_js() {
                 pop_out = 'pop-out-right';
             }
 
-			$(this).wrap('<figure class="image-box '+alignment+'"/>');
+			$(this).wrap('<figure class="image-box ' + alignment + ' ' + pop_out + '"/>');
 			if ( $(this).data('credit') != undefined || $(this).data('caption') != undefined ) {
                 if(caption_class != 'caption-bottom') {                    
                     $(this).css('display', 'inline-block');
@@ -51,7 +51,7 @@ function wpib_image_box_js() {
                 } else {
                     style = 'style="max-width: ' + width + 'px;"';
                 }
-				$(this).after('<div class="image-meta ' + caption_class + ' ' + pop_out + '" ' + style + '>' + credit + caption + '</div>');
+				$(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + credit + caption + '</div>');
 			}
 	    });
 	});
