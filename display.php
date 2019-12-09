@@ -37,9 +37,9 @@ function wpib_image_box_js() {
                 caption_class = 'caption-bottom';
             }
             
-            if($(this).hasClass('pop-out') && 'alignleft' == alignment) {
+            if($(this).hasClass('pop-out') && ('alignleft' == alignment || 'caption-right' == caption_class)) {
                 pop_out = 'pop-out-left';
-            } else if ($(this).hasClass('pop-out') && 'alignright' == alignment) {
+            } else if ($(this).hasClass('pop-out') && ('alignright' == alignment || 'caption-left' == caption_class)) {
                 pop_out = 'pop-out-right';
             }
 
