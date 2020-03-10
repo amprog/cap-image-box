@@ -51,7 +51,11 @@ function wpib_image_box_js() {
                 } else {
                     style = 'style="max-width: ' + width + 'px;"';
                 }
-				$(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + credit + caption + '</div>');
+                if( $('body').hasClass('fancy-form') ) {
+                    $(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + caption + credit + '</div>');
+                } else {
+                    $(this).after('<div class="image-meta ' + caption_class + '" ' + style + '>' + credit + caption + '</div>');
+                }
 			}
 	    });
 	});
