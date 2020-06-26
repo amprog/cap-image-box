@@ -10,6 +10,7 @@ function wpib_image_box_js() {
 	<script type="text/javascript">
 	jQuery(document).ready(function($){
 	    $('img.wp-photo').each(function() {
+            console.log($(this));
 			if($(this).data('credit') != undefined) {
                 if($(this).attr("alt") == undefined || $(this).attr("alt").length == 0) {
                     $(this).attr("alt", $(this).data('credit'));
@@ -23,7 +24,7 @@ function wpib_image_box_js() {
 			} else {
 				caption = '';
 			}
-			alignment = $(this).data('align');
+			alignment = $(this).data('alignment');
 			width = $(this).attr('width');
             
             var caption_class = '';
