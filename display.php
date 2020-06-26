@@ -10,20 +10,20 @@ function wpib_image_box_js() {
 	<script type="text/javascript">
 	jQuery(document).ready(function($){
 	    $('img.wp-photo').each(function() {
-			if ($(this).data('credit') != undefined) {
+			if($(this).data('credit') != undefined) {
+                if($(this).attr("alt") == undefined || $(this).attr("alt").length == 0) {
+                    $(this).attr("alt", $(this).data('credit'));
+                }
 				credit = '<span class="photo-credit">'+$(this).data('credit')+'</span>';
 			} else {
 				credit = '';
 			}
-			if ($(this).data('caption') != undefined) {
-                if ($(this).attr("alt") == undefined || $(this).attr("alt").length == 0) {
-                    $(this).attr("alt", $(this).data('caption'));
-                }
+			if($(this).data('caption') != undefined) {
 				caption = '<span class="photo-caption">'+$(this).data('caption')+'</span>';
 			} else {
 				caption = '';
 			}
-			alignment = $(this).data('alignment');
+			alignment = $(this).data('align');
 			width = $(this).attr('width');
             
             var caption_class = '';
